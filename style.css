@@ -1,0 +1,63 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: cadetblue; 
+}
+
+header, .navbar, .btn-primary {
+    background-color: #2c3e50 !important;
+    border-color: #2c3e50 !important;
+    color: white;
+}
+
+.btn {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #1a252f;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.repo-card {
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.repo-card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    background-color: #2c3e50; 
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+#followers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: start;
+    padding: 10px 0;
+    font-size: 25px; 
+}
+
+.follower-img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease; 
+    cursor: pointer;
+}
