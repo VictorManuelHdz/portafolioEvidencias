@@ -1,6 +1,5 @@
 const urlApi = 'https://api.github.com/users/VictorManuelHdz';
 
-// Función genérica para obtener datos (evita repetir fetch)
 const fetchGithub = async (endpoint) => {
     try {
         const response = await fetch(`${urlApi}${endpoint}`);
@@ -14,7 +13,6 @@ const cargarPerfil = async () => {
     const user = await fetchGithub('');
     const contenedor = document.getElementById("perfil-container");
     
-    // Usamos una estructura más limpia para el HTML
     contenedor.innerHTML = `
         <div class="profile-header">
             <img src="${user.avatar_url}" alt="Avatar" class="rounded-circle border border-4 border-light shadow" width="150">
@@ -26,12 +24,10 @@ const cargarPerfil = async () => {
 };
 
 const cargarRepos = async () => {
-    // Usamos 'pushed' para traer donde hubo cambios de código recientes
-    // 'direction=desc' asegura que los más nuevos aparezcan primero
     const repos = await fetchGithub('/repos?sort=pushed&direction=desc&per_page=6');
     
     const contenedor = document.getElementById("repos-container");
-    if (!contenedor) return; // Seguridad por si el ID cambia
+    if (!contenedor) return; 
     
     contenedor.innerHTML = "";
 
@@ -61,7 +57,6 @@ const cargarRepos = async () => {
 };
 
 const cargarSeguidores = async () => {
-    // Limitamos a 5 seguidores con el parámetro per_page
     const seguidores = await fetchGithub('/followers?per_page=5');
     const lista = document.getElementById("followers-container");
     lista.innerHTML = "";
@@ -77,7 +72,6 @@ const cargarSeguidores = async () => {
     });
 };
 
-// Iniciar todo
 cargarPerfil();
 cargarRepos();
 cargarSeguidores();
